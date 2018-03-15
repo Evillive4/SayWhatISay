@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     protected TtsMode ttsMode = TtsMode.MIX;
     // 离线发音选择，VOICE_FEMALE即为离线女声发音。
     // assets目录下bd_etts_speech_female.data为离线男声模型；bd_etts_speech_female.data为离线女声模型
-    protected String offlineVoice = OfflineResource.VOICE_MALE;
+    protected String offlineVoice = OfflineResource.VOICE_FEMALE;
     // 主控制类，所有合成控制方法从这个类开始
     protected MySyntherizer synthesizer;
 
