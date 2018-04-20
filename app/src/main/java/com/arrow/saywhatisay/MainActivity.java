@@ -71,9 +71,11 @@ public class MainActivity extends AppCompatActivity {
         btn_on.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int result = synthesizer.speak("你好");
-                Intent LaunchIntent = getPackageManager().getLaunchIntentForPackage("com.alibaba.android.rimet");
-                startActivity(LaunchIntent);
+//                int result = synthesizer.speak("你好");
+//                Intent LaunchIntent = getPackageManager().getLaunchIntentForPackage("com.alibaba.android.rimet");
+//                startActivity(LaunchIntent);
+
+                GlobalMethods.lock(MainActivity.this);
             }
         });
 
