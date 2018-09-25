@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<device-admin xmlns:android="http://schemas.android.com/apk/res/android" >
+<device-admin xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-policies>
 
         <force-lock />
+        <set-global-proxy />  <!-- 设置设备全局代理 -->
+        <watch-login /> <!-- 监控屏幕解锁尝试次数 -->
     </uses-policies>
 
 </device-admin>

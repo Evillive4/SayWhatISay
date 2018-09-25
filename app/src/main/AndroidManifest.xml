@@ -17,20 +17,6 @@
     <!--android:name="com.baidu.speech.VoiceRecognitionService"-->
     <!--android:exported="false" />-->
 
-    <!--<receiver
-        android:name="com.arrow.saywhatisay.ScreenOffAdminReceiver"
-        android:label="@string/app_name"
-        android:permission="android.permission.BIND_DEVICE_ADMIN"
-        tools:ignore="WrongManifestParent">
-        <meta-data
-            android:name="android.app.device_admin"
-            android:resource="@xml/device_admin" />
-
-        <intent-filter>
-            <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
-        </intent-filter>
-    </receiver>-->
-
     <application
         android:name=".application.MyApplication"
         android:allowBackup="true"
@@ -50,13 +36,26 @@
             android:name="com.baidu.speech.SECRET_KEY"
             android:value="2G7iL8Zc55E9UrBR3kCd5Bk63RuVYuCh" />
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver
+            android:name=".receiver.AdminManageReceiver"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin" />
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>

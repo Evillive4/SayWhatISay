@@ -1,4 +1,4 @@
-package com.arrow.saywhatisay;
+package com.arrow.saywhatisay.activity;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -8,18 +8,16 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.arrow.saywhatisay.R;
 import com.arrow.saywhatisay.control.InitConfig;
 import com.arrow.saywhatisay.control.MyRecognizer;
 import com.arrow.saywhatisay.control.MySyntherizer;
 import com.arrow.saywhatisay.control.MyWakeup;
-import com.arrow.saywhatisay.recognization.MessageStatusRecogListener;
 import com.arrow.saywhatisay.recognization.NonBlockSyntherizer;
-import com.arrow.saywhatisay.recognization.StatusRecogListener;
 import com.arrow.saywhatisay.recognization.UiMessageListener;
 import com.arrow.saywhatisay.util.AutoCheck;
 import com.arrow.saywhatisay.util.Global;
@@ -27,7 +25,6 @@ import com.arrow.saywhatisay.util.GlobalMethods;
 import com.arrow.saywhatisay.util.Logger;
 import com.arrow.saywhatisay.util.OfflineResource;
 import com.arrow.saywhatisay.wakeup.IWakeupListener;
-import com.arrow.saywhatisay.wakeup.RecogWakeupListener;
 import com.arrow.saywhatisay.wakeup.SimpleWakeupListener;
 import com.baidu.speech.asr.SpeechConstant;
 import com.baidu.tts.client.SpeechSynthesizer;
@@ -61,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         tv_text = (TextView) findViewById(R.id.tv_text);
-
 
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(MainActivity.this.getClass().getSimpleName());
@@ -121,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
 
         Logger.setHandler(handler);
 
+        GlobalMethods.isAdminActive(this);
     }
 
     protected void handleMsg(Message msg) {

@@ -3,7 +3,7 @@ package com.arrow.saywhatisay.wakeup;
 import android.content.Intent;
 import android.util.Log;
 
-import com.arrow.saywhatisay.MainActivity;
+import com.arrow.saywhatisay.activity.MainActivity;
 import com.arrow.saywhatisay.application.MyApplication;
 import com.arrow.saywhatisay.util.Logger;
 
